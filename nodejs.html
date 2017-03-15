@@ -1,0 +1,120 @@
+<div>
+	<h1>My First Angular App</h1>
+	
+	<div>
+		<p> {{ var_city }} </p>
+
+		<!-- FIRST EXERCICE -->
+		<input type="text" [(ngModel)]="var_user">
+
+		<button (click)="cityNameCheck()">
+			Check
+		</button>
+
+
+		<input type="text" [(ngModel)]="var_user2">
+
+		<button (click)="cityNameCheck2('bristol','manchester')">
+			Check
+		</button>
+
+
+		<input type="text" [(ngModel)]="var_user3">
+
+		<button (click)="cityNameCheck3()">
+			Check
+		</button>
+	</div>
+
+
+	<div style="margin-top:100px;">
+		<!-- SECOND EXERCICE -->
+
+		<input type="number" [(ngModel)]="var_Number1">
+
+		<input type="number" [(ngModel)]="var_Number2">
+
+		<button (click)="calculator()">
+			Sum
+		</button>
+
+		<p *ngIf="calculation">The sum is: {{ sum }} </p>
+
+
+
+
+	</div>
+	<!-- EXERCICE 3 -->
+
+	<H1> Checking cities </H1>
+
+	<input type="text" [(ngModel)]="city_input">
+
+	<button (click)="favCity()">
+		Press
+	</button>
+
+	<p *ngIf="result"> Result is on list</p>
+
+	<p *ngFor="let city of cities"> the city is {{ city }} </p>
+
+
+
+	<p *ngIf="!result"> Result is not on list</p>
+
+
+	<!-- EXERCICE 4 -->
+
+	<H1 style="padding-top:50px;"> SIGN UP </H1>
+
+	<div *ngIf="step == 1">
+
+		<input type="text" [(ngModel)]="subscriber" placeholder="Name">
+
+		<button (click)="submit()"> 
+	 		Submit
+
+		</button>
+
+	</div>
+
+	<div *ngIf="step == 2">
+
+		<input type="text" [(ngModel)]="email" placeholder="Email">
+
+		<button (click)="submit()"> 
+	 		Submit
+
+		</button>
+
+	</div>
+	
+	<div *ngIf="step == 3">
+
+		<input type="text" [(ngModel)]="city" placeholder="City">
+
+		<button (click)="submit()"> 
+	 		Submit
+
+		</button>
+
+	</div>
+
+	<div *ngIf="step == 4">
+
+		<input type="text" [(ngModel)]="nationality" placeholder="Nationality">
+
+		<button (click)="submit()"> 
+	 		Submit
+
+		</button>
+
+	</div>
+
+
+
+</div>
+
+
+
+

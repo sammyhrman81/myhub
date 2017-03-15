@@ -1,0 +1,73 @@
+
+
+<div>
+
+	<h1>SAMS AUCTIONS {{ calculation() }}</h1>
+	
+	<div class="block">
+		<p> Introductions to auctions </p>
+
+		<input type="text" [(ngModel)]="firstname" placeholder="your firstname">
+
+		<input type="text" [(ngModel)]="surname" placeholder="your surname">
+
+		<input type="text" [(ngModel)]="username" placeholder="your username">
+
+
+
+		<button (click)="addNewuser()">
+			Add User
+		</button>
+
+		<div *ngFor="let user of array"> 
+
+				<p > firstname:  {{ user.firstname }} </p>
+
+				<p > surname:  {{ user.surname }} </p>
+
+				<p > username:  {{ user.username }} </p>
+
+		</div>
+	</div>
+
+	
+
+	<div class="block">
+		<h1> Item </h1>
+
+		<div  class="item" *ngFor="let item of items; let i = index;">
+
+			 	<h2>{{ item.title }}</h2>
+
+			 	<img src ="{{ item.picture }}" alt="Gustaviansk table" style="width:304px;height:228px;">
+
+			 	<p> {{ item.description }} </p>
+
+			 	<p> £{{ item.price }} </p>
+
+			 	<h3>Bid</h3>
+
+				<input type="text" [(ngModel)]="item.bidder" placeholder="username">
+
+				<input type="text" [(ngModel)]="item.bid" placeholder="your bid">	
+
+				<button (click)="newBid(i)">
+					Bid
+				</button>
+		</div>
+
+		<!--
+		create binding between item and bid. 
+
+		-->
+
+
+
+
+		
+
+	</div>
+
+
+
+</div>
